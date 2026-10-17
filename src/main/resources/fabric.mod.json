@@ -1,0 +1,35 @@
+{
+	"schemaVersion": 1,
+	"id": "shitterlist",
+	"version": "${version}",
+	"name": "Shitterlist",
+	"description": "v2.0 — Coordinación de shards: cuando hay 2+ jugadores con el mod en la misma party, solo 1 hace la petición a la API y comparte el resultado con los demás, reduciendo las llamadas a Hypixel. Caché local de 5 minutos y protocolo oculto en el chat de la party.",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/shitterlist/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"client": [
+			"com.tuusuario.blacklist.BlacklistClient"
+		]
+	},
+	"mixins": [
+		"shitterlist.mixins.json",
+		{
+			"config": "shitterlist.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.1.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
